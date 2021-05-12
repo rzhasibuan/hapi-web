@@ -63,6 +63,14 @@ const routes = [
       const { username, password } = request.payload;
     },
   },
+  {
+    method: "GET",
+    path: "/home/{name}",
+    handler: (request, h) => {
+      const { name } = request.params;
+      return h.response(`Data Success Created ${name}`).code(201);
+    },
+  },
 ];
 
 module.exports = routes;
